@@ -11,10 +11,24 @@
    elemСlass - название класса, которое проверяется.
 */
 
-export function hasClass(elem, elemClass) {}
+export function hasClass(elem, elemClass) {
+    let item = elem;
+    if (item.classList == null || item.classList == undefined) return false;
+    return item.classList.contains(elemClass);
+}
 
-export function addClass(elem, elemClass) {}
+export function addClass(elem, elemClass) {
+    let item = elem;
+    if (!hasClass(elem, elemClass)) item.classList.add(elemClass);
+}
 
-export function removeClass(elem, elemClass) {}
+export function removeClass(elem, elemClass) {
+    let item = elem;
+    if (hasClass(elem, elemClass)) item.classList.remove(elemClass);
+}
 
-export function toggleClass(elem, elemClass) {}
+export function toggleClass(elem, elemClass) {
+    let item = document.body;
+    item = elem;
+    item.classList.toggle(elemClass);
+}
